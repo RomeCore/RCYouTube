@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="RCYouTube.YouTubeVideoResultControl"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 mc:Ignorable="d" 
+			 d:DesignHeight="75" d:DesignWidth="700">
+	<ListBoxItem>
+		<DockPanel>
+
+			<CheckBox x:Name="checkBox" DockPanel.Dock="Left" Margin="5"/>
+
+			<Image x:Name="thumbnail" VerticalAlignment="Stretch" Height="75" DockPanel.Dock="Left"/>
+
+			<Grid DockPanel.Dock="Right" Margin="5 0 0 0">
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Grid.Row="0" x:Name="titleText" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18"/>
+
+				<TextBlock Grid.Row="1" x:Name="authorText" VerticalAlignment="Center" FontSize="14"/>
+
+			</Grid>
+
+		</DockPanel>
+	</ListBoxItem>
+</UserControl>

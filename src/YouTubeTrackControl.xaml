@@ -1,0 +1,18 @@
+﻿<rc_pb:PlayableControl x:Class="RCYouTube.YouTubeTrackControl"
+					   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+					   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+					   xmlns:rc_pb="clr-namespace:RCAudioPlayer.WPF.Playables;assembly=RCAudioPlayer.WPF"
+					   mc:Ignorable="d" 
+					   d:DesignHeight="40" d:DesignWidth="500">
+	<DockPanel>
+
+		<Image x:Name="thumbnail" DockPanel.Dock="Left" Height="40" Margin="0 0 3 0" VerticalAlignment="Stretch"/>
+
+		<TextBlock DockPanel.Dock="Top" x:Name="titleText" VerticalAlignment="Center" FontSize="14"/>
+
+		<TextBlock DockPanel.Dock="Bottom" x:Name="authorText" VerticalAlignment="Center" FontSize="10"/>
+
+	</DockPanel>
+</rc_pb:PlayableControl>

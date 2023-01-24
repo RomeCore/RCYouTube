@@ -1,0 +1,45 @@
+﻿<rc:Window x:Class="RCYouTube.YouTubeBrowser"
+		   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		   xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+		   xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+		   xmlns:t="clr-namespace:RCAudioPlayer.WPF.Translation;assembly=RCAudioPlayer.WPF"
+		   xmlns:rc="clr-namespace:RCAudioPlayer.WPF;assembly=RCAudioPlayer.WPF"
+		   mc:Ignorable="d"
+		   FontSize="20"
+		   Title="{t:Translate youtube_browser}" Height="450" Width="800">
+	<DockPanel>
+
+		<DockPanel DockPanel.Dock="Top" Margin="3">
+
+			<Button Click="SearchButton_Click" DockPanel.Dock="Right" Margin="3 0 0 0" Style="{DynamicResource MaterialDesignFloatingActionMiniButton}">
+				<icons:Material Kind="Magnify"/>
+			</Button>
+
+			<TextBox md:TextFieldAssist.HasClearButton="True" x:Name="queryTextBox" DockPanel.Dock="Left" md:HintAssist.Hint="{t:Translate youtube_search_hint}"/>
+
+		</DockPanel>
+
+		<Grid HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<Button x:Name="okButton" Grid.Column="0" Click="OkButton_Click" Content="{t:Translate ok}" Margin="3"/>
+
+			<Button x:Name="cancelButton" Grid.Column="1" Click="CancelButton_Click" Content="{t:Translate cancel}" Margin="3"/>
+
+		</Grid>
+
+		<Grid x:Name="resultContentHolder" DockPanel.Dock="Top">
+			<ScrollViewer x:Name="searchResultsPanel" Visibility="Hidden">
+				<ItemsControl x:Name="searchResultsList"/>
+			</ScrollViewer>
+			<Label x:Name="searchNoResultsLabel" Content="{t:Translate youtube_no_results}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+		</Grid>
+
+	</DockPanel>
+</rc:Window>
